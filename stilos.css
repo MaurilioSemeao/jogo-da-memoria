@@ -1,0 +1,94 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, rgb(7, 128, 168) 0%, blueviolet 100%);
+    
+}
+
+.titulo{
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    border: 1px solid;
+    align-items:flex-end;
+    justify-content: space-evenly;
+}
+
+.pontos{
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.container-alinamento{
+    position: absolute;
+    top:24%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-principal{
+    display: flex;
+    width: 330px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container-card{
+   width: 60px;
+   height: 60px;
+   margin-top: 6px;  
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    transition: all;
+    transform-style: preserve-3d;
+    transition: all .5s;
+}
+
+.face{
+    width: 60px;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 6px;
+    box-shadow: -2px -3px 5px 0px rgb(53, 2, 2) inset, 2px 2px 5px white inset, 1px 1px 3px darkblue ;
+}
+
+.frente{
+    background: linear-gradient(90deg, #dc143c 0%, #33030d 90%);
+    transform: rotateY(180deg);
+    color: cri;
+}
+
+.verso{
+    background: linear-gradient(90deg, #96dc14 0%, #029902 90%);
+    overflow: hidden;
+    backface-visibility: hidden;
+
+}
+
+.verso img{
+    width: 60px;
+}
+
+.flip{
+    transform: rotateY(180deg);
+    
+}
