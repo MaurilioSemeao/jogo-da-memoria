@@ -5,4 +5,5 @@
  ## Primeira Tarefa:
     
      - Adicionar html e css estilizar componentes 
-        - criar um gride para alocar as carta 
+        - Criar um gride para alocar as carta, 
+        - Criar carta e adiconar efeito de flip,
