@@ -29,11 +29,11 @@ body{
 }
 
 .face{
-    background-color: aliceblue;
+    background-color: black;
     width: 100%;
-    height: 100%;
+    height: 101%;
     border-radius: 5px; 
-    border: px solid goldenrod;   
+    border: 1px solid goldenrod;   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +44,6 @@ body{
 
 .front{
     transform: rotateY(180deg);
-    background-image: url(../img/dragao-alado-de-ra.png);
     background-size:100% 100%;
     background-repeat: no-repeat;
 }
