@@ -3,6 +3,7 @@
 body{
     background-color: #333;
     display: flex;
+    justify-content: center;
     position: relative;
     top: 20px;
     padding: 20px;
@@ -12,7 +13,7 @@ body{
     display: grid;
     width: 100%;
     max-width: 800px;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(8,1fr);
     gap: 10px;
    
 
@@ -44,8 +45,10 @@ body{
 
 .front{
     transform: rotateY(180deg);
+    background-image: url('/assets/img/dragao-alado-de-ra.png');
     background-size:100% 100%;
     background-repeat: no-repeat;
+    transition: all .5s linear;
 }
 .back{
     background-image: url(../img/fundo.png);
@@ -56,4 +59,10 @@ body{
 
 .flip{
     transform: rotateY(180deg);
+}
+
+.desabilitar{
+    filter: opacity(40%);
+    filter: saturate(3%);
+    transition-delay: .8s; 
 }

@@ -13,4 +13,5 @@
          - Adicionar o  flip as catara,
          - Criar logica para validação de jogo,
          - Criar logica para verificr erro e acerto,
+         - ferificar fin de jogo.
          
