@@ -1,11 +1,39 @@
 @import url(reset.css);
 body{
+    width: 100vw;
     background-color: #333;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     position: relative;
-    top: 20px;
-    padding: 20px;
+    padding: 10px;
+}
+
+.titulo h1{
+    color: antiquewhite;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: -3px -3px 3px goldenrod;
+    padding: 10px;
+}
+
+.titulo{
+    margin-top: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.info-jogo{
+    max-width: 30rem;
+    width: 100%;
+    height: 5rem;
+    margin-bottom: 15px;
+    background-color: antiquewhite;
+    border: 4px solid rgb(124, 95, 22);
+    border-radius: 20px;
+    box-shadow: -3px -3px 6px black inset, -3px -3px 6px goldenrod;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .container-grid{
@@ -14,8 +42,8 @@ body{
     max-width: 800px;
     grid-template-columns: repeat(8,1fr);
     gap: 10px;
-   
-
+    position: relative;
+    
 }
 
 .card{
@@ -64,4 +92,45 @@ body{
     filter: opacity(40%);
     filter: saturate(3%);
     transition-delay: .8s; 
+}
+
+@media (max-width: 620px){
+    .container-grid{
+        grid-template-columns: repeat(4,1fr);
+        padding: 10px;  
+    }
+    .titulo h1{
+        padding: 0;
+        margin-top: 0;
+    }
+    .info-jogo{
+        height: 4.3rem;
+        margin-top: 2px;
+    }
+
+}
+@media (max-width: 491px){
+    .titulo h1{
+        font-size: 2.5rem;
+    }
+
+}
+@media (max-width: 445px){
+    .container-grid{
+        grid-template-columns: repeat(5,1fr);
+        padding: 8px;
+    }
+
+}
+@media (max-width: 418px){
+    .titulo h1{
+        font-size: 2.2rem;
+    }
+
+}
+@media (max-width: 418px){
+    .titulo h1{
+        font-size: 2.2rem;
+    }
+
 }
