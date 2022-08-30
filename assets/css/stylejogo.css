@@ -36,6 +36,17 @@ body{
     align-items: center;
 }
 
+.display{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.texto{
+    font-size: 18px;
+}
+
 .container-grid{
     display: grid;
     width: 100%;
@@ -60,7 +71,7 @@ body{
     background-color: black;
     width: 100%;
     height: 101%;
-    border-radius: 5px; 
+    border-radius: 2.5px; 
     border: 1px solid goldenrod;   
     display: flex;
     justify-content: center;
@@ -96,7 +107,7 @@ body{
 
 @media (max-width: 620px){
     .container-grid{
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(6,1fr);
         padding: 10px;  
     }
     .titulo h1{
@@ -117,7 +128,7 @@ body{
 }
 @media (max-width: 445px){
     .container-grid{
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(6,1fr);
         padding: 8px;
     }
 
