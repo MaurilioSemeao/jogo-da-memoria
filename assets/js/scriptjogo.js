@@ -21,8 +21,10 @@
 
     let primeiraCarta = undefined;
     let segundaCarta = undefined;
+    let endGame = false;
     let contClick = 0;
     let pontuacao = 0;
+    let contador = 0;
 
     function Cards(tag, nomeClass){
         const card = document.createElement(tag);
@@ -108,6 +110,7 @@
     function verificaFimDeJogo(tamArray){
         const cardDesabilitada = document.querySelectorAll(".desabilitar");
         if(tamArray === cardDesabilitada.length){
+            endGame = true;
             setTimeout(()=>{
                 alert("END GAME");
                 const grid = document.querySelector(".container-grid");
@@ -123,18 +126,19 @@
         const nome = document.getElementById('nome');
         if(localStorage.getItem('nome')){
             nome.innerText = localStorage.getItem('nome')
-
         }
     }
 
     function contTimer(){
         const timer = document.getElementById('timer');
-        let contador = 0;
-        const contTimer = setInterval(()=>{
-                timer.innerHTML  = contador.toString();
-                contador++;
-        },1000);
+        timer.innerHTML  = contador.toString();
+        contador++;
+        if(endGame){
+            clearInterval(contSetTimer);
+        }     
     }
+    const contSetTimer = setInterval(contTimer,1000);
+    
 
    function exibePontuacao(pontuacao){
         const pontos = document.getElementById('pontos');
@@ -145,8 +149,8 @@
         const personaDuplicado = [...nomePersonagens, ...nomePersonagens];
         personaDuplicado.sort(()=> Math.random() - 0.5);
         const tamanhoArray = personaDuplicado.length;
+    
         exibeNome();
-        contTimer();
         personaDuplicado.forEach((item)=>{
             newCard(item,(card)=>{
                 card.addEventListener("click",(item)=> {
