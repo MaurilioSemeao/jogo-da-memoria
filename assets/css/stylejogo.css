@@ -47,6 +47,14 @@ body{
     font-size: 18px;
 }
 
+#nome{
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 18px;
+    color: #333;
+    text-shadow: 2px 2px 3px black;
+}
+
 .container-grid{
     display: grid;
     width: 100%;
