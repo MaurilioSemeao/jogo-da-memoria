@@ -114,10 +114,28 @@
         console.log(cardDesabilitada.length);
     }
 
+    function exibeNome(){
+        const nome = document.getElementById('nome');
+        if(localStorage.getItem('nome')){
+            nome.innerText = localStorage.getItem('nome')
+
+        }
+    }
+
+    function contTimer(){
+        const timer = document.getElementById('timer');
+        let contador = 0;
+        const contTimer = setInterval(()=>{
+                timer.innerHTML  = contador.toString();
+                contador++;
+        },1000);
+    }
+
     function iniciaJogo(){
         const personaDuplicado = [...nomePersonagens, ...nomePersonagens];
         personaDuplicado.sort(()=> Math.random() - 0.5);
         const tamanhoArray = personaDuplicado.length;
+        exibeNome();
         
         personaDuplicado.forEach((item)=>{
             newCard(item,(card)=>{
@@ -136,7 +154,7 @@
             });
             
         })
-        
+        contTimer();
     }
     iniciaJogo();
 
