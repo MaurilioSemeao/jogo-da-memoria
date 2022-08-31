@@ -22,6 +22,7 @@
     let primeiraCarta = undefined;
     let segundaCarta = undefined;
     let contClick = 0;
+    let pontuacao = 0;
 
     function Cards(tag, nomeClass){
         const card = document.createElement(tag);
@@ -93,13 +94,15 @@
         } 
         
         if(primeiraCarta.dataset.personagen === segundaCarta.dataset.personagen){
-            
+            pontuacao += 100;
            resetSeAcerto(primeiraCarta,segundaCarta)
         }else{
-               
+             if(pontuacao != 0){
+                pontuacao -= 10;
+             }   
             resetSeErrou(primeiraCarta,segundaCarta)
         }
-       
+            exibePontuacao(pontuacao);
     }
 
     function verificaFimDeJogo(tamArray){
@@ -109,9 +112,11 @@
                 alert("END GAME");
                 const grid = document.querySelector(".container-grid");
                 grid.style.visibility = "hidden";
+                iniciaJogo();
             },652)
+           
         }
-        console.log(cardDesabilitada.length);
+       
     }
 
     function exibeNome(){
@@ -131,17 +136,23 @@
         },1000);
     }
 
+   function exibePontuacao(pontuacao){
+        const pontos = document.getElementById('pontos');
+        pontos.innerHTML = pontuacao.toString();
+   }
+
     function iniciaJogo(){
         const personaDuplicado = [...nomePersonagens, ...nomePersonagens];
         personaDuplicado.sort(()=> Math.random() - 0.5);
         const tamanhoArray = personaDuplicado.length;
         exibeNome();
-        
+        contTimer();
         personaDuplicado.forEach((item)=>{
             newCard(item,(card)=>{
                 card.addEventListener("click",(item)=> {
                     flip(item)
                     verificaFimDeJogo(tamanhoArray);
+                    
                 });
                 setTimeout(()=>{
                     card.classList.add("flip");
@@ -154,7 +165,7 @@
             });
             
         })
-        contTimer();
+        
     }
     iniciaJogo();
 
