@@ -14,9 +14,9 @@
         "mago-negro",
         "obelisco-o-atormentador",
         "slifer-o-dragao-celeste",
-        // "spellcaster",
-        // "troca-de-coração",
-        // "yami-yugi",
+        "spellcaster",
+        "troca-de-coração",
+        "yami-yugi",
     ]
 
     let primeiraCarta = undefined;
@@ -109,14 +109,14 @@
 
     function verificaFimDeJogo(tamArray){
         const cardDesabilitada = document.querySelectorAll(".desabilitar");
+        const telaEnd = document.querySelector('.end-game');
         if(tamArray === cardDesabilitada.length){
             endGame = true;
             setTimeout(()=>{
-                alert("END GAME");
+                telaEnd.classList.add('visibilit')
                 const grid = document.querySelector(".container-grid");
-                grid.style.visibility = "hidden";
-                iniciaJogo();
-            },652)
+                grid.innerHTML ="";
+            },500)
            
         }
        
