@@ -13,5 +13,9 @@
          - Adicionar o  flip as catara,
          - Criar logica para validação de jogo,
          - Criar logica para verificr erro e acerto,
-         - ferificar fin de jogo.
+         - verificar fim de jogo,
+         - adicionar texto indice,
+         - adicionar nome jogador, timer, pontuação
+         - adicionar tela de end gamer,
+         - exibir ultimas pontuações
          
