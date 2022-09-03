@@ -144,7 +144,7 @@ body{
     position: absolute;
     top:50%;
     transform: translateY(-50%);
-    visibility: hidde;
+    visibility: hidden;
     transition: ease-in .3s;
 }
 
@@ -162,7 +162,7 @@ body{
 }
 
 .heade{
-    padding: 15px;
+    height: 5rem;
     border-bottom: 2px solid rgb(124, 95, 22);
     background-color: goldenrod;
 }
@@ -243,12 +243,13 @@ body{
     .info-jogo{
         height: 4.3rem;
         margin-top: 2px;
+        font-size: 2rem ;
     }
 
 }
 @media (max-width: 491px){
     .titulo h1{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
 }
@@ -261,7 +262,7 @@ body{
 }
 @media (max-width: 418px){
     .titulo h1{
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
 }
