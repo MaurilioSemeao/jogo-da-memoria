@@ -76,7 +76,7 @@ body{
     display: grid;
     width: 100%;
     max-width: 800px;
-    grid-template-columns: repeat(8,1fr);
+    grid-template-columns: repeat(7,1fr);
     gap: 10px;  
 }
 
@@ -145,12 +145,13 @@ body{
     top:50%;
     transform: translateY(-50%);
     visibility: hidden;
-    transition: ease-in .3s;
+    opacity: 0;
 }
 
 .visibilit{
+    opacity: 1;
     visibility: visible;
-    transition: ease-in .3s;
+    transition: all 5s;
 }
 
 .item{
@@ -179,15 +180,37 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     width: 100%;
     height: 100%;
     overflow-y:auto;
 }
 
 .player{
+    width: 98%;
     min-height: 50px;
     background-color: rgba(51, 51, 51, 0.158);
     margin-top: 3px;
+}
+
+.player span{
+    width: 50px;
+    overflow: hidden;
+}
+
+.nome-inf{  
+    flex-shrink:1;
+    flex-grow: 1;
+}
+
+.timer-info{
+    flex-grow: 1;
+    flex-shrink:0;
+}
+
+.pontos-info{
+    flex-grow: 1;
+    flex-shrink:1;
 }
 
 .botoes{
@@ -233,42 +256,55 @@ body{
 
 @media (max-width: 620px){
     .container-grid{
-        grid-template-columns: repeat(6,1fr);
+        grid-template-columns: repeat(5,1fr);
         padding: 10px;  
+        margin-right: 10px;
     }
     .titulo h1{
         padding: 0;
         margin-top: 0;
+        font-size: 1.6rem ;
     }
     .info-jogo{
-        height: 4.3rem;
-        margin-top: 2px;
-        font-size: 2rem ;
+        height: 4rem;
+        margin-top: 1px;
+        margin-right: 9px;
     }
+    .display > span >span{
+        font-size: 10px;
+    }
+    
 
 }
-@media (max-width: 491px){
+@media (max-width: 520px){
     .titulo h1{
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
-
+    .item{
+        font-size: 13px;
+    }
 }
+
 @media (max-width: 445px){
     .container-grid{
-        grid-template-columns: repeat(6,1fr);
+        grid-template-columns: repeat(5,1fr);
         padding: 2px;
     }
-
+    
 }
 @media (max-width: 418px){
     .titulo h1{
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
-
+    .timer-info{
+        flex-grow: 0;
+        flex-shrink:0;
+    }
+      
 }
 @media (max-width: 329px){
     .titulo h1{
-        font-size: 1.6rem;
+        font-size: 1.1rem;
     }
 
 }
