@@ -5,26 +5,31 @@
         "dragao-alado-de-ra",
         "dragao-caveira-negro",
         "dragao-milenar",
-        "dragrao-branco-de-olhos-azuis",
-        "dragrao-negro-dos-olhos-vermelhos",
-        "exodia",
-        "gerreiro-da-espada-flamejante-",
-        "kuriboh",
-        "mago-do-tempo",
-        "mago-negro",
-        "obelisco-o-atormentador",
-        "slifer-o-dragao-celeste",
-        "spellcaster",
-        "troca-de-coração",
-        "yami-yugi",
+        // "dragrao-branco-de-olhos-azuis",
+        // "dragrao-negro-dos-olhos-vermelhos",
+        // "exodia",
+        // "gerreiro-da-espada-flamejante-",
+        // "kuriboh",
+        // "mago-do-tempo",
+        // "mago-negro",
+        // "obelisco-o-atormentador",
+        // "slifer-o-dragao-celeste",
+        // "spellcaster",
+        // "troca-de-coração",
+        // "yami-yugi",
     ]
 
     let primeiraCarta = undefined;
     let segundaCarta = undefined;
-    let endGame = false;
     let contClick = 0;
-    let pontuacao = 0;
+    //propriedade tela
+    const timer = document.getElementById('timer');
+    const pontos = document.getElementById('pontos');
+
+    //variaveis de controle   
     let contador = 0;
+    let pontuacao = 0;
+    let endGame = false;
 
     function Cards(tag, nomeClass){
         const card = document.createElement(tag);
@@ -108,12 +113,13 @@
     }
 
     function verificaFimDeJogo(tamArray){
-        const cardDesabilitada = document.querySelectorAll(".desabilitar");
-        const telaEnd = document.querySelector('.end-game');
+        const cardDesabilitada = document.querySelectorAll(".desabilitar"); 
+          
         if(tamArray === cardDesabilitada.length){
             endGame = true;
             setTimeout(()=>{
-                telaEnd.classList.add('visibilit')
+                
+                chamaFimDeJogo();
                 const grid = document.querySelector(".container-grid");
                 grid.innerHTML ="";
             },500)
@@ -130,7 +136,6 @@
     }
 
     function contTimer(){
-        const timer = document.getElementById('timer');
         timer.innerHTML  = contador.toString();
         contador++;
         if(endGame){
@@ -139,9 +144,31 @@
     }
     const contSetTimer = setInterval(contTimer,1000);
     
+    function chamaFimDeJogo(){
+        const telaEnd = document.querySelector('.end-game');
+        const $novoJogo = document.querySelector("#novo-jogo");
+        const $voltarInicio = document.querySelector('#voltar-inicio')
+       
+        telaEnd.classList.add('visibilit');
+
+        $novoJogo.addEventListener('click',()=>{
+            telaEnd.classList.remove('visibilit')
+            timer.innerHTML  = '0';
+            pontos.innerHTML = '00';
+            pontuacao = 0;
+            contador = 0;
+            endGame = false
+            iniciaJogo()
+        });
+        
+        $voltarInicio.addEventListener('click',()=>{
+            window.location = "../index.html"
+        });
+
+
+    }
 
    function exibePontuacao(pontuacao){
-        const pontos = document.getElementById('pontos');
         pontos.innerHTML = pontuacao.toString();
    }
 
