@@ -4,19 +4,19 @@
     const nomePersonagens=[
         "dragao-alado-de-ra",
         "dragao-caveira-negro",
-        "dragao-milenar",
-        // "dragrao-branco-de-olhos-azuis",
-        // "dragrao-negro-dos-olhos-vermelhos",
-        // "exodia",
+        //"dragao-milenar",
+        "dragrao-branco-de-olhos-azuis",
+        "dragrao-negro-dos-olhos-vermelhos",
+        "exodia",
         // "gerreiro-da-espada-flamejante-",
-        // "kuriboh",
-        // "mago-do-tempo",
-        // "mago-negro",
-        // "obelisco-o-atormentador",
-        // "slifer-o-dragao-celeste",
-        // "spellcaster",
-        // "troca-de-coração",
-        // "yami-yugi",
+        "kuriboh",
+        "mago-do-tempo",
+        //"mago-negro",
+        "obelisco-o-atormentador",
+        "slifer-o-dragao-celeste",
+        "spellcaster",
+        //"troca-de-coração",
+        //"yami-yugi",
     ]
 
     let primeiraCarta = undefined;
@@ -25,7 +25,7 @@
     //propriedade tela
     const timer = document.getElementById('timer');
     const pontos = document.getElementById('pontos');
-    const nomeJogador = localStorage.getItem('nome');
+    const nomeJogador = sessionStorage.getItem('nome');
     //variaveis de controle   
     let contador = 0;
     let pontuacao = 0;
@@ -132,7 +132,7 @@
 
     function exibeNome(){
         const nome = document.getElementById('nome');
-        if(localStorage.getItem('nome')){
+        if(sessionStorage.getItem('nome')){
             nome.innerText = nomeJogador
         }
     }
@@ -221,7 +221,6 @@
    }
    
    function iniciaJogo(){
-       
         const personaDuplicado = [...nomePersonagens, ...nomePersonagens];
         personaDuplicado.sort(()=> Math.random() - 0.5);
         const tamanhoArray = personaDuplicado.length;
