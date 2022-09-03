@@ -18,7 +18,6 @@
         event.preventDefault();
 
         window.location = "./paginas/jogo.html";
-        window.localStorage.setItem('nome',$input.value);
         window.sessionStorage.setItem('nome',$input.value);
     });
 
