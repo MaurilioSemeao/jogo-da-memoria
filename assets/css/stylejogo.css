@@ -151,7 +151,7 @@ body{
 .visibilit{
     opacity: 1;
     visibility: visible;
-    transition: all 5s;
+    transition: all 1s;
 }
 
 .item{
@@ -287,6 +287,9 @@ body{
     }
     .item{
         font-size: 13px;
+    }
+    .end-game{
+        top:60%;
     }
 }
 

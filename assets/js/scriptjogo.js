@@ -106,8 +106,8 @@
             resetSeAcerto(primeiraCarta,segundaCarta)
         }else{
             setTimeout(()=>{
-                audioJogo('click','mp3',0.9)
-            },900)
+                audioJogo('click','mp3',1)
+            },820)
              if(pontuacao != 0){
                 pontuacao -= 10;
              }   
@@ -192,8 +192,8 @@
         telaEnd.classList.add('visibilit');
 
         $novoJogo.addEventListener('click',()=>{
-            resetGame(telaEnd,$novoJogo)
-            
+            //resetGame(telaEnd,$novoJogo)
+            window.location.reload();  
            
         });
         
@@ -234,11 +234,10 @@
    
     function iniciaJogo(){
         const personaDuplicado = [...nomePersonagens, ...nomePersonagens];
-        personaDuplicado.sort(()=> Math.random() - 0.5);
+        personaDuplicado.sort(()=> Math.random() - 0.10);
         const tamanhoArray = personaDuplicado.length;
-        const rand = Math.round(Math.random() * 2);
-        console.log(rand)
-        audioJogo(`yugioh0${rand}`,'m4a',0.5);
+        const rand = Math.round(Math.random() + 0.5 * 2);
+        audioJogo(`yugioh0${rand}`,'m4a',0.4);
         function contTimer(){
             timer.innerHTML  = contador.toString();
             contador++;
