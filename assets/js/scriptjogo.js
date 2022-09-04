@@ -101,9 +101,13 @@
         } 
         
         if(primeiraCarta.dataset.personagen === segundaCarta.dataset.personagen){
+            audioJogo('acerto','mp3',0.5)
             pontuacao += 100;
-           resetSeAcerto(primeiraCarta,segundaCarta)
+            resetSeAcerto(primeiraCarta,segundaCarta)
         }else{
+            setTimeout(()=>{
+                audioJogo('click','mp3',0.9)
+            },900)
              if(pontuacao != 0){
                 pontuacao -= 10;
              }   
@@ -139,9 +143,9 @@
 
     function exibePontuacao(){
         pontos.innerHTML = pontuacao.toString();
-   }
+    }
 
-   function resetGame(tela,btn){
+    function resetGame(tela,btn){
             const telaInfo = document.querySelector('.info');
             tela.classList.remove('visibilit')
             timer.innerHTML  = '0';
@@ -152,12 +156,12 @@
             endGame = false
             setTimeout(iniciaJogo,500)
             btn.removeEventListener('click',resetGame);
-   }
+    }
 
-   function newInfo(obPlayer){
+    function newInfo(obPlayer){
         const telaInfo = document.querySelector('.info');
         const div = Elemento('div','player item');
-        const sName = Elemento('span','nome-inf');
+        const sName = Elemento('span','nome-info');
         const sTimer = Elemento('span','timer-info');
         const sPontos = Elemento('span','pontos-info');
 
@@ -198,7 +202,7 @@
         });
     }
 
-   function salvarDadosJogo(nome,timer,toalPontos){
+    function salvarDadosJogo(nome,timer,toalPontos){
 
         let arrayUltimaJogadas = [];
 
@@ -218,13 +222,23 @@
         arrayUltimaJogadas.unshift(player);
 
         window.localStorage.setItem('partidasjogadas', JSON.stringify(arrayUltimaJogadas));
-   }
+    }
+
+    function audioJogo(audio,extensao,volume){
+        const music = new Audio();
+        music.src =`../assets/audio/${audio}.${extensao}`;
+        music.volume = volume;
+        music.play();
+    }
+
    
-   function iniciaJogo(){
+    function iniciaJogo(){
         const personaDuplicado = [...nomePersonagens, ...nomePersonagens];
         personaDuplicado.sort(()=> Math.random() - 0.5);
         const tamanhoArray = personaDuplicado.length;
-
+        const rand = Math.round(Math.random() * 2);
+        console.log(rand)
+        audioJogo(`yugioh0${rand}`,'m4a',0.5);
         function contTimer(){
             timer.innerHTML  = contador.toString();
             contador++;
@@ -240,7 +254,7 @@
                 card.addEventListener("click",(item)=> {
                     flip(item)
                     verificaFimDeJogo(tamanhoArray);
-                    
+                    audioJogo('flipcard','mp3',0.6)
                 });
                 setTimeout(()=>{
                     card.classList.add("flip");
@@ -256,5 +270,5 @@
         
     }
     iniciaJogo();
-
+    //window.addEventListener('load',iniciaJogo)
 })();
