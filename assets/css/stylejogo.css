@@ -198,7 +198,8 @@ body{
     overflow: hidden;
 }
 
-.nome-inf{  
+.nome-info{
+    text-transform: uppercase;  
     flex-shrink:1;
     flex-grow: 1;
 }
@@ -258,27 +259,31 @@ body{
     .container-grid{
         grid-template-columns: repeat(5,1fr);
         padding: 10px;  
-        margin-right: 10px;
     }
     .titulo h1{
         padding: 0;
         margin-top: 0;
-        font-size: 1.6rem ;
+        font-size: 1.7rem ;
     }
     .info-jogo{
         height: 4rem;
         margin-top: 1px;
-        margin-right: 9px;
     }
-    .display > span >span{
-        font-size: 10px;
+    #nome{  
+       font-size: 13px;
+    }
+    #timer{
+        font-size: 13px;
+    }
+    #pontos{
+        font-size: 13px;
     }
     
 
 }
 @media (max-width: 520px){
     .titulo h1{
-        font-size: 1.3rem;
+        font-size: 1.6rem;
     }
     .item{
         font-size: 13px;
