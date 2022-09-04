@@ -13,12 +13,23 @@
     }
 
     $input.addEventListener('input',validarInput)
-
+    
     $forms.addEventListener('submit',(event)=>{
         event.preventDefault();
-
-        window.location = "./paginas/jogo.html";
+        setTimeout(()=>{
+            window.location = "./paginas/jogo.html";
+        },3000)
         window.sessionStorage.setItem('nome',$input.value);
+        audioLogin();
     });
+
+    function audioLogin(){
+        const music = new Audio();
+        music.src = "./assets/audio/login.m4a";
+        music.volume = 0.3;
+        music.play();
+    }
+
+    window.addEventListener('load',audioLogin);
 
 })()
