@@ -234,7 +234,7 @@
    
     function iniciaJogo(){
         const personaDuplicado = [...nomePersonagens, ...nomePersonagens];
-        personaDuplicado.sort(()=> Math.random() - 0.10);
+        personaDuplicado.sort(()=> Math.random() - 0.5);
         const tamanhoArray = personaDuplicado.length;
         const rand = Math.round(Math.random() + 0.5 * 2);
         audioJogo(`yugioh0${rand}`,'m4a',0.4);
