@@ -106,7 +106,6 @@ body{
 
 .front{
     transform: rotateY(180deg);
-    background-image: url('/assets/img/dragao-alado-de-ra.png');
     background-size:100% 100%;
     background-repeat: no-repeat;
     transition: all .5s linear;
