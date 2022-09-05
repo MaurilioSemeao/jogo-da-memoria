@@ -48,7 +48,7 @@ body{
     height: 93%;
     border-radius: 100%;
     background-color: #333;
-    background-image: url("/assets/img/yami-yugi.png");
+    background-image: url("../img/yami-yugi.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
