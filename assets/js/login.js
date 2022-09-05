@@ -18,7 +18,7 @@
         event.preventDefault();
         setTimeout(()=>{
             window.location = "./paginas/jogo.html";
-        },2000)
+        },3000)
         window.sessionStorage.setItem('nome',$input.value);
         audioLogin();
     });
